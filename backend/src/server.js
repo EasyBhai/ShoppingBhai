@@ -11,6 +11,8 @@ const addressRoutes = require('./routes/addresses');
 const orderRoutes = require('./routes/orders');
 const reviewRoutes = require('./routes/reviews');
 const userRoutes = require('./routes/users');
+const adminRoutes = require('./routes/admin'); // Added admin routes by kishan
+
 
 const app = express();
 app.use(cors({ origin: process.env.FRONTEND_URL }));
@@ -25,6 +27,7 @@ app.use('/api/addresses', addressRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/reviews', reviewRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/admin', adminRoutes); // Added admin routes by kishan
 
 app.get('/health', (req, res) => res.json({ status: 'ok' }));
 
